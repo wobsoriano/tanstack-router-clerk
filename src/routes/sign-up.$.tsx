@@ -8,7 +8,7 @@ import { SignUp } from '@clerk/clerk-react'
 
 const fallback = '/dashboard' as const
 
-export const Route = createFileRoute('/sign-up')({
+export const Route = createFileRoute('/sign-up/$')({
   validateSearch: z.object({
     redirect: z.string().optional().catch(''),
   }),

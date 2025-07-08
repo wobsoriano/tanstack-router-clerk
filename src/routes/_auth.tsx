@@ -13,7 +13,7 @@ export const Route = createFileRoute('/_auth')({
     if (!context.user) {
       console.log('User not authenticated, redirecting to login...')
       throw redirect({
-        to: '/sign-in',
+        to: '/sign-in/$',
         search: {
           redirect: location.href,
         },
@@ -33,7 +33,7 @@ function AuthLayout() {
     if (window.confirm('Are you sure you want to logout?')) {
       clerk.signOut().then(() => {
         router.invalidate().finally(() => {
-          navigate({ to: '/sign-in' })
+          navigate({ to: '/sign-in/$' })
         })
       })
     }

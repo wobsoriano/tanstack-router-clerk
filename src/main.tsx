@@ -44,6 +44,8 @@ function App() {
       publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}
       signInFallbackRedirectUrl="/dashboard"
       signUpFallbackRedirectUrl="/dashboard"
+      signInUrl="/sign-in"
+      signUpUrl="/sign-up"
       routerPush={(to) => router.navigate({ to })}
       routerReplace={(to) => router.navigate({ to, replace: true })}
     >
